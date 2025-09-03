@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`AddRecipeModal Snapshots renders AddRecipeModal when closed 1`] = `<div />`;
+
+exports[`AddRecipeModal Snapshots renders AddRecipeModal when open 1`] = `
+<div>
+  <div
+    data-testid="modal"
+  >
+    <div
+      data-testid="modal-content"
+    >
+      <form>
+        <div
+          data-testid="modal-header"
+        >
+          Add new recipe
+        </div>
+        <div
+          data-testid="modal-body"
+        >
+          <input
+            label="Recipe title"
+            placeholder="Enter recipe title"
+            value=""
+            variant="bordered"
+          />
+          <input
+            label="Image URL"
+            placeholder="Enter image URL (optional)"
+            value=""
+            variant="bordered"
+          />
+          <input
+            label="Cooking Time"
+            placeholder="e.g., 30 minutes"
+            value=""
+            variant="bordered"
+          />
+          <div>
+            <div
+              class="flex justify-between items-center mb-2"
+            >
+              <label
+                class="text-sm font-medium"
+              >
+                Ingredients
+              </label>
+              <button
+                color="primary"
+                startcontent="[object Object]"
+                variant="flat"
+              >
+                Add ingredient
+              </button>
+            </div>
+            <div>
+              <div
+                class="flex gap-2 mt-2"
+              >
+                <input
+                  class="flex-1"
+                  placeholder="Ingredient 1"
+                  value=""
+                  variant="bordered"
+                />
+                <button
+                  color="danger"
+                  variant="flat"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="flex justify-between items-center mb-2"
+            >
+              <label
+                class="text-sm font-medium"
+              >
+                Instructions
+              </label>
+              <button
+                color="primary"
+                startcontent="[object Object]"
+                variant="flat"
+              >
+                Add Step
+              </button>
+            </div>
+            <div
+              class="space-y-2"
+            >
+              <div
+                class="flex gap-2"
+              >
+                <span
+                  class="text-sm text-gray-500 pt-3 w-8"
+                >
+                  1
+                  .
+                </span>
+                <input
+                  class="flex-1"
+                  placeholder="Step 1"
+                  value=""
+                  variant="bordered"
+                />
+                <button
+                  color="danger"
+                  variant="flat"
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 448 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-testid="modal-footer"
+        >
+          <button
+            color="danger"
+            variant="flat"
+          >
+            Cancel
+          </button>
+          <button
+            color="primary"
+            type="submit"
+          >
+            Add Recipe
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

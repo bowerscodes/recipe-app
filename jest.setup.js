@@ -19,11 +19,13 @@ jest.mock('@heroui/react', () => ({
   CardBody: ({ children, ...props }) => <div {...props}>{children}</div>,
   CardHeader: ({ children, ...props }) => <div {...props}>{children}</div>,
   Input: ({ ...props }) => <input {...props} />,
-  Modal: ({ children, isOpen, ...props }) => isOpen ? <div {...props}>{children}</div> : null,
-  ModalContent: ({ children, ...props }) => <div {...props}>{children}</div>,
-  ModalHeader: ({ children, ...props }) => <div {...props}>{children}</div>,
-  ModalBody: ({ children, ...props }) => <div {...props}>{children}</div>,
-  ModalFooter: ({ children, ...props }) => <div {...props}>{children}</div>,
+  Modal: ({ children, isOpen, onOpenChange, placement, size, scrollBehavior, ...props }) => 
+    isOpen ? <div data-testid="modal" {...props}>{children}</div> : null,
+  ModalContent: ({ children, ...props }) => <div data-testid="modal-content" {...props}>{typeof children === 'function' ? children() : children}</div>,
+  ModalHeader: ({ children, ...props }) => <div data-testid="modal-header" {...props}>{children}</div>,
+  ModalBody: ({ children, ...props }) => <div data-testid="modal-body" {...props}>{children}</div>,
+  ModalFooter: ({ children, ...props }) => <div data-testid="modal-footer" {...props}>{children}</div>,
+  Textarea: ({ ...props }) => <textarea {...props} />,
   HeroUIProvider: ({ children, ...props }) => <div {...props}>{children}</div>,
   useDisclosure: () => ({
     isOpen: false,
