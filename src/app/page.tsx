@@ -9,14 +9,24 @@ import { useState } from "react";
 import AddRecipeModal from "@/components/AddRecipeModal";
 
 export default function Home() {
-  const { userRecipes } = useRecipeContext();
-  const [filter, setFilter] = useState<"all" | "mine">("all");
+  const { userRecipes, isFavourite } = useRecipeContext();
+  const [filter, setFilter] = useState<"all" | "favourites" | "mine">("all");
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const allRecipes = [...recipesData as Recipe[], ...userRecipes];
-  const filteredRecipes = filter === "mine"
-    ? allRecipes.filter(recipe => recipe.author === "me")
-    : allRecipes;
+
+  const filteredRecipes = () => {
+    switch (filter) {
+      case "mine":
+        return allRecipes.filter(recipe => recipe.author === "me");
+      case "favourites":
+        return allRecipes.filter(recipe => isFavourite(recipe.id));
+      default:
+        return allRecipes;
+    }
+  }
+
+  const favouriteCount = allRecipes.filter(recipe => isFavourite(recipe.id)).length;
 
   return (
     <div className="bg-white rounded-lg p-6">
@@ -36,6 +46,13 @@ export default function Home() {
           All Recipes ({allRecipes.length})
         </Button>
         <Button 
+          variant={filter === "favourites" ? "solid" : "flat"}
+          color={filter === "favourites" ? "primary" : "default"}
+          onPress={() => setFilter("favourites")}
+        >
+          Favorites ({favouriteCount})
+        </Button>
+        <Button 
           variant={filter === "mine" ? "solid" : "flat"}
           color={filter === "mine" ? "primary" : "default"}
           onPress={() => setFilter("mine")}
@@ -44,11 +61,13 @@ export default function Home() {
         </Button>
       </div>
 
-      {filteredRecipes.length === 0 ? (
+      {filteredRecipes().length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-500 mb-4">
             {filter === "mine" 
               ? "You haven't added any recipes yet." 
+              : filter === "favourites"
+              ? "You haven't favorited any recipes yet."
               : "No recipes found."
             }
           </p>
@@ -60,7 +79,7 @@ export default function Home() {
         </div>
       ) : (
         <main className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
-          {filteredRecipes.map((recipe: Recipe) => (
+          {filteredRecipes().map((recipe: Recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} />
           ))}
         </main>
