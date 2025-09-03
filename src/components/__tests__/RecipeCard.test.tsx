@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
-import { render } from "@/app/utils/test-utils";
 
+import { render } from "@/app/utils/test-utils";
 import RecipeCard from "../RecipeCard";
 import recipesData from "../../data/recipes.json"
 
