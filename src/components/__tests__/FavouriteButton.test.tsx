@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+
 import FavouriteButton from "../FavouriteButton";
 import { Recipe } from "@/types/Recipe";
 
