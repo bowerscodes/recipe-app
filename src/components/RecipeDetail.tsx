@@ -17,8 +17,15 @@ export default function RecipeDetail({ recipe }: RecipeDetailProps) {
           className="relative bg-cover bg-center bg-no-repeat rounded-lg p-6 h-[200px] flex flex-col justify-end"
           style={{ backgroundImage: `url(${recipe.image})` }}
         >
-          <h1 className="text-white mb-0">{recipe.title}</h1>
-          <p className="text-white font-semibold">{recipe.cookingTime}</p>
+
+          {/* Header Image tint */}
+          <div
+            className="absolute inset-0 rounded-lg"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+          />
+          
+          <h1 className="text-white mb-0 z-10">{recipe.title}</h1>
+          <p className="text-white font-semibold z-10">{recipe.cookingTime}</p>
         </div>
 
         <div className="mt-4">
