@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Lasagne & Chips",
+    "image": "https://img2.thejournal.ie/article/5084219/river/?height=400&version=5084251",
+    "cookingTime": "45 minutes",
+    "ingredients": [
+      "200g Lasagne Sheets",
+      "500g Minced Beef",
+      "1 onion",
+      "4 cloves Garlic",
+      "Tomato Sauce",
+      "Cheese Sauce",
+      "Oven Chips"
+    ],
+    "instructions": [
+      "Fry the onions and garlic in a medium frying pan until softened",
+      "Add the mince to the pan and brown evenly",
+      "Once browned, stir in the tomato sauce and simmer for 10 minutes",
+      "Pre-heat oven to 180 degrees Celcius",
+      "Line a Baking Dish with Lasagne Sheets and spoon in half of the beef mixture",
+      "Add another layer of lasagne sheets on top, and add half of the jar of cheese sauce",
+      "Repeat by adding the remaining beef mixture, topped with another layer of lasagne sheets, followed by Cheese sauce",
+      "Add the lasagne and Chips to the oven and bake for 25 minutes."
+    ],
+    "reviews": [
+      { "rating": 5, "comment": "Delicious! Best lasagne I've ever had" },
+      { "rating": 4, "comment": "Tasty, but could do with some grated cheese on top" }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Fish & Chips",
+    "image": "https://www.christinascucina.com/wp-content/uploads/2021/02/fullsizeoutput_ec71.jpeg",
+    "cookingTime": "25 minutes",
+    "ingredients": [
+      "1 Fillet of Battered Cod",
+      "Oven Chips"
+    ],
+    "instructions": [
+      "Pre-heat your oven to 180 degrees Celcius",
+      "Lay out the Fish and Chips on a baking tray",
+      "Add the Fish and Chips to the oven and bake for 22 minutes.",
+      "Enjoy!"
+    ],
+    "reviews": [
+      { "rating": 2, "comment": "Very plain" },
+      { "rating": 3, "comment": "Nice and easy, but could do withy some peas" }
+    ]
+  }
+]
