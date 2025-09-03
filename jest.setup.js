@@ -12,34 +12,6 @@ jest.mock('next/navigation', () => ({
   useSearchParams: () => new URLSearchParams(),
 }))
 
-// Mock Supabase client
-jest.mock('@/lib/supabase', () => ({
-  supabase: {
-    from: jest.fn(() => ({
-      select: jest.fn().mockReturnThis(),
-      insert: jest.fn().mockReturnThis(),
-      update: jest.fn().mockReturnThis(),
-      delete: jest.fn().mockReturnThis(),
-      eq: jest.fn().mockReturnThis(),
-      order: jest.fn().mockReturnThis(),
-      single: jest.fn(),
-      then: jest.fn(),
-    })),
-    auth: {
-      getUser: jest.fn(),
-      getSession: jest.fn(),
-    },
-  },
-  supabaseServiceRole: {
-    from: jest.fn(() => ({
-      select: jest.fn().mockReturnThis(),
-      insert: jest.fn().mockReturnThis(),
-      eq: jest.fn().mockReturnThis(),
-      single: jest.fn(),
-    })),
-  },
-}))
-
 // Mock HeroUI components
 jest.mock('@heroui/react', () => ({
   Button: ({ children, ...props }) => <button {...props}>{children}</button>,
@@ -77,7 +49,6 @@ jest.mock('framer-motion', () => ({
   },
   AnimatePresence: ({ children }) => children,
 }))
-
 
 // Only suppress the specific JSDOM navigation warning (this is acceptable)
 const originalError = console.error;
