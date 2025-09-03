@@ -2,20 +2,23 @@ import { screen } from "@testing-library/react";
 import { render } from "@/app/utils/test-utils";
 
 import RecipeCard from "../RecipeCard";
-import { Recipe } from "@/types/Recipe";
+import recipesData from "../../data/recipes.json"
 
-const recipe: Recipe = {
-  id: 1,
-  title: "Lasagne & Chips",
-  image: "",
-  cookingTime: "45 minutes",
-  ingredients: ["A", "B"],
-  instructions: ["Step 1"],
-  reviews: [],
-};
+const recipe = recipesData[0];
 
-test("renders RecipeCard with title and ingredients", () => {
+test("renders RecipeCard with title, image, cooking time and ingredients", () => {
   render(<RecipeCard recipe={recipe} />);
-  expect(screen.getByText("Lasagne & Chips")).toBeInTheDocument();
-  expect(screen.getByText("2 Ingredients")).toBeInTheDocument();
+  expect(screen.getByText(recipe.title)).toBeInTheDocument();
+  expect(screen.getByAltText(`Image of ${recipe.title}`)).toBeInTheDocument();
+  expect(screen.getByText(recipe.cookingTime)).toBeInTheDocument();
+  expect(screen.getByText(`${recipe.ingredients.length} Ingredients`)).toBeInTheDocument();
+});
+
+test("renders RecipeCard with FavouriteButton", () => {
+  render(<RecipeCard recipe={recipe} />);
+  expect(
+    screen.getByRole("button", {
+      name: new RegExp(`(Add|Remove) ${recipe.title} to favourites`)
+    })
+  ).toBeInTheDocument();
 });
