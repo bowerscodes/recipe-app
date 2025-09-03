@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe App
 
-## Getting Started
+A modern recipe management application built with Next.js, TypeScript, and HeroUI. Users can browse recipes, mark favorites, and add their own recipes.
 
-First, run the development server:
+## Features
 
+### Acceptance Criteria & Implementation Status
+
+- ✅ **I can view a list of all recipes** - Browse all recipes on the home page with responsive card layout
+- ✅ **I can save recipes to my favourites** - Heart icon on recipe cards with persistent localStorage storage
+- ✅ **I can create a custom recipe** - Add Recipe modal with dynamic ingredient/instruction fields
+- ✅ **I can view my custom recipes in a list** - Filter toggle between "All Recipes" and "My Recipes"
+- ✅ **I can view a given recipe in more detail** - Individual recipe detail pages with full information
+- ✅ **Recipe includes required data:**
+  - ✅ Cooking time
+  - ✅ Ingredients (dynamic list)
+  - ✅ Instructions (numbered steps)
+  - ✅ Reviews (display existing reviews)
+- ❌ **I can rate recipes** - Outstanding feature not yet implemented
+
+### Additional Features
+- Responsive design with modern UI components
+- Type-safe TypeScript implementation
+- Comprehensive test coverage
+
+## Quick Start
+
+### Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Run Tests
+```bash
+npm test
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **UI Library:** HeroUI (NextUI)
+- **Styling:** Tailwind CSS
+- **Testing:** Jest + React Testing Library
+- **Icons:** React Icons
