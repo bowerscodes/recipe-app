@@ -1,9 +1,12 @@
 import { ReactNode } from "react";
 import { render, RenderOptions } from "@testing-library/react";
+import { HeroUIProvider } from "@heroui/react";
 import RecipeProvider from "@/context/RecipeContext";
 
 const AllProviders = ({ children }: { children: ReactNode }) => (
-  <RecipeProvider>{children}</RecipeProvider>
+  <HeroUIProvider>
+    <RecipeProvider>{children}</RecipeProvider>
+  </HeroUIProvider>
 );
 
 const customRender = (

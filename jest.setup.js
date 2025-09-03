@@ -24,6 +24,7 @@ jest.mock('@heroui/react', () => ({
   ModalHeader: ({ children, ...props }) => <div {...props}>{children}</div>,
   ModalBody: ({ children, ...props }) => <div {...props}>{children}</div>,
   ModalFooter: ({ children, ...props }) => <div {...props}>{children}</div>,
+  HeroUIProvider: ({ children, ...props }) => <div {...props}>{children}</div>,
   useDisclosure: () => ({
     isOpen: false,
     onOpen: jest.fn(),
