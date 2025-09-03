@@ -6,7 +6,7 @@ export interface Recipe {
   ingredients: string[];
   instructions: string[];
   reviews: Review[];
-  author: string;
+  author?: string;
 };
 
 export interface Review {
