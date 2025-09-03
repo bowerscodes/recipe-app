@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { Card } from "@heroui/card";
 
 import { Recipe } from "@/types/Recipe";
@@ -8,8 +11,14 @@ interface RecipeCardProps {
 };
 
 export default function RecipeCard({ recipe }: RecipeCardProps) {
+  const router = useRouter();
+
   return (
-    <Card className="p-4">
+    <Card 
+      className="p-4"
+      isPressable
+      onPress={() => router.push(`/recipe/${recipe.id}`)}
+    >
       <h3>{recipe.title}</h3>
       <Image 
         alt={`Image of ${recipe.title}`}
