@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import { notFound } from "next/navigation";
 
 import { useRecipeContext } from "@/context/RecipeContext";
@@ -8,19 +9,18 @@ import recipesData from "@/data/recipes.json";
 import RecipeDetail from "@/components/RecipeDetail";
 
 interface PageProps {
-  params: { id: string }
-};
+  params: Promise<{ id: string }>;
+}
 
 export default function RecipeDetailPage({ params }: PageProps) {
-    const { userRecipes } = useRecipeContext();
-  const allRecipes = [...recipesData as Recipe[], ...userRecipes];
-  const recipe = allRecipes.find(recipe => recipe.id === parseInt(params.id));
+  const { id } = use(params);
+  const { userRecipes } = useRecipeContext();
+  const allRecipes = [...(recipesData as Recipe[]), ...userRecipes];
+  const recipe = allRecipes.find((recipe) => recipe.id === parseInt(id));
 
   if (!recipe) {
     return notFound();
   }
 
-  return (
-    <RecipeDetail recipe={recipe} />
-  )
-};
+  return <RecipeDetail recipe={recipe} />;
+}
