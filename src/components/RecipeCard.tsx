@@ -2,9 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { Card } from "@heroui/card";
+import { Image } from "@heroui/image";
 
 import { Recipe } from "@/types/Recipe";
-import { Image } from "@heroui/image";
+import FavouriteButton from "./FavouriteButton";
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -19,7 +20,10 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
       isPressable
       onPress={() => router.push(`/recipe/${recipe.id}`)}
     >
-      <h3>{recipe.title}</h3>
+      <div className="flex justify-between">
+        <h3>{recipe.title}</h3>
+        <FavouriteButton recipe={recipe} />
+      </div>
       <Image 
         alt={`Image of ${recipe.title}`}
         src={recipe.image}
